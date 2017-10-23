@@ -10,5 +10,5 @@ const mongoosePopulateDeep = require('mongoose-auto-populate-deep')
 ```
 and
 ```$xslt
-MongooseSchema.plugin(populateAll);
+MongooseSchema.plugin(mongoosePopulateDeep);
 ```
