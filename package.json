@@ -1,6 +1,6 @@
 {
   "name": "mongoose-auto-populate-deep",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "description": "Populate all the fields deep auto",
   "repository": {
     "type": "git",

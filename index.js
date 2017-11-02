@@ -33,8 +33,13 @@ const getRoutes = paths => Object.keys(paths)
 const getSchemaPath = Schema => getRoutes(Schema.paths).map(getRef(true));
 
 const populateHandler = populateAll => function (next) {
-	this.populate(populateAll);
-	next();
+	if (this._mongooseOptions && this._mongooseOptions.lean) {
+	  next();
+  } else {
+    this.populate(populateAll);
+    next();
+  }
+
 };
 
 module.exports = (Schema) => {
