@@ -10,5 +10,7 @@ const mongoosePopulateDeep = require('mongoose-auto-populate-deep')
 ```
 and
 ```$xslt
-MongooseSchema.plugin(mongoosePopulateDeep);
+MongooseSchema.plugin(mongoosePopulateDeep, { exclude: [] });
 ```
+
+`exclude` optional parameter. Excluded fields array. Provided fields won't be populated
