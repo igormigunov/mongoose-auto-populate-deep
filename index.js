@@ -6,7 +6,9 @@ const getChildPath = modelName =>
 const getRef = needPopulate => ({ pathname, ref }) =>
   ref && { path: pathname, populate: needPopulate && getChildPath(ref) };
 
-const normalizePaths = ob => !ob.schemaType.options.type[0].type ? ob.schemaType.options.type[0] : {
+const getPathNewStruct = type => type.tree || type
+
+const normalizePaths = ob => !ob.schemaType.options.type[0].type ? getPathNewStruct(ob.schemaType.options.type[0]) : {
   [ob.pathname]: Object.assign({}, ob.schemaType.options.type[0], { pathname: ob.pathname }),
 };
 
